@@ -1,14 +1,17 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Card = sequelize.define('Card', {
+  const Card = sequelize.define('Card', {
     name: DataTypes.STRING,
     user_id: DataTypes.INT
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Card.associate = (models) => {
+    Card.hasMany(models.CardCategory, {
+      foreignKey: 'card_id',
+      as: 'cardCategories',
+    });
+  };
+
   return Card;
+
 };

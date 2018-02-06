@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "devin",
+    "password": "12345",
+    "database": "book-bingo-dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "devin",
+    "password": "12345",
+    "database": "book-bingo-test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "devin",
+    "password": "12345",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

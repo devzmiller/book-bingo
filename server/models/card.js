@@ -6,10 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Card.associate = (models) => {
-    Card.hasMany(models.CardCategory, {
-      foreignKey: 'card_id',
-      as: 'cardCategories',
-    });
+    Card.belongsToMany(models.Category, { through: 'CardCategories', as: 'category' });
   };
 
   return Card;

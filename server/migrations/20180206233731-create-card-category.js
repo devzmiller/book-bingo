@@ -12,18 +12,16 @@ module.exports = {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: {
-          model: 'Card',
+          model: 'Cards',
           key: 'id',
-          as: 'card_id',
         },
       },
       category_id: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: {
-          model: 'Category',
+          model: 'Categories',
           key: 'id',
-          as: 'category_id',
         },
       },
       createdAt: {

@@ -2,14 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
   const Card = sequelize.define('Card', {
     name: DataTypes.STRING,
-    user_id: DataTypes.INT
+    user_id: DataTypes.INTEGER,
   });
 
   Card.associate = (models) => {
-    Card.hasMany(models.CardCategory, {
-      foreignKey: 'card_id',
-      as: 'cardCategories',
-    });
+    Card.belongsToMany(models.Category, { through: 'CardCategories', as: 'category' });
   };
 
   return Card;

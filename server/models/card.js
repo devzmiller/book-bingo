@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Card = sequelize.define('Card', {
     name: DataTypes.STRING,
-    user_id: DataTypes.INT
+    user_id: DataTypes.INTEGER,
   });
 
   Card.associate = (models) => {

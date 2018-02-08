@@ -15,5 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     Category.belongsToMany(models.Card, { through: 'CardCategories', as: 'cards' });
   };
 
+  Category.createCategory = (category) => {
+    
+  };
+
   return Category;
 };

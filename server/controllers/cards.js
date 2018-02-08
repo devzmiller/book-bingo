@@ -1,7 +1,23 @@
 const Card = require('../models').Card;
+const Category = require('../models').Category;
 
 module.exports = {
+  createCategory(category) {
+    Category.findOrCreate({
+      where: {
+        name: category
+      },
+    })
+    .then(foundCategory => foundCategory.dataValues);
+  },
+
   create(req, res) {
+    const categories = req.body.categories.split(", ");
+    let categoryObjects = [];
+    categories.forEach(category => {
+      categoryObjects.push(module.exports.createCategory(category));
+    });
+    console.log(categoryObjects);
     return Card
       .create({
         name: req.body.name,
